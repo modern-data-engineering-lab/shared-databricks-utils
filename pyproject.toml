@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "databricks-utils"
+description = "Shared Databricks/PySpark utilities: logging, config loading, schema validation, retry/backoff."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+dynamic = ["version"]
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pyspark>=3.5",
+    "ruff>=0.6",
+]
+
+[tool.hatch.version]
+path = "src/databricks_utils/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/databricks_utils"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
