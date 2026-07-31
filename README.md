@@ -6,6 +6,11 @@ Common utilities for Databricks/PySpark jobs: logging, config loading, schema
 validation, and retry/backoff — shared across our Databricks repos so each one
 isn't reinventing the same boilerplate.
 
+📖 **New here?** See [`docs/OVERVIEW.md`](docs/OVERVIEW.md) for a full
+walkthrough of what this repo is, why it exists, and how each utility works —
+written for any level of experience, plus a list of planned deep-dive
+tutorials.
+
 ## Why this exists
 
 Every Databricks job ends up needing the same handful of things: a logger that
